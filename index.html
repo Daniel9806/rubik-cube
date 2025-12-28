@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulador Cubo de Rubik</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./style.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="hud">
+      <div id="title">Cubo de Rubik</div>
+      <div id="help">
+        Arrastrá en el fondo para rotar la vista. Scroll para zoom.<br />
+        Click y arrastrá sobre una cara para girar una capa.
+      </div>
+      <div id="gestureRow">
+        <label for="gestureMode">Giro:</label>
+        <select id="gestureMode">
+          <option value="auto" selected>Auto</option>
+          <option value="horizontal">Horizontal</option>
+          <option value="vertical">Vertical</option>
+        </select>
+      </div>
+      <div id="cameraRow">
+        <label for="cameraSensitivity">Cámara:</label>
+        <input id="cameraSensitivity" type="range" min="0.25" max="2.5" value="1" step="0.05" />
+      </div>
+      <div id="buttons">
+        <button id="resetBtn" type="button">Reset</button>
+        <button id="scrambleBtn" type="button">Scramble</button>
+      </div>
+    </div>
+    <canvas id="c"></canvas>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
